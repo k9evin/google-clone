@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/82a2be08-6892-4ea1-9d9a-8fce498ce54c/deploy-status)](https://app.netlify.com/sites/google-clone-js/deploys)
 
 ## Available Scripts
 
