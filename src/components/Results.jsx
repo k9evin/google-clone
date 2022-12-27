@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import ReactPlayer from "react-player";
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 
-import { useResultContext } from "../contexts/ResultContextProvider";
-import { Loading } from "./Loading";
+import { useResultContext } from '../contexts/ResultContextProvider';
+import { Loading } from './Loading';
 
 export const Results = () => {
     const { results, isLoading, getResults, searchTerm } = useResultContext();
@@ -19,7 +19,7 @@ export const Results = () => {
     console.log(location.pathname);
 
     switch (location.pathname) {
-        case "/search":
+        case '/search':
             return (
                 <div className="flex flex-wrap justify-between space-y-6 sm:px-56">
                     {results?.map(({ link, title, description }, index) => (
@@ -27,7 +27,7 @@ export const Results = () => {
                             <a href={link} target="_blank" rel="noreferrer">
                                 <p className="text-xs">
                                     {link.length > 30
-                                        ? link.substring(0, 30) + " ..."
+                                        ? link.substring(0, 30) + ' ...'
                                         : link}
                                 </p>
                                 <p className="text-lg hover:underline dark:text-blue-300 text-blue-700">
@@ -36,9 +36,9 @@ export const Results = () => {
                                 <p className="text-sm dark:text-gray-300 text-gray-700 break-words">
                                     {description.replace(
                                         /(?:https?|ftp):\/\/[\n\S]+/g,
-                                        ""
+                                        ''
                                     ).length > 60
-                                        ? description.substring(0, 60) + " ..."
+                                        ? description.substring(0, 60) + ' ...'
                                         : description}
                                 </p>
                             </a>
@@ -46,7 +46,7 @@ export const Results = () => {
                     ))}
                 </div>
             );
-        case "/image":
+        case '/image':
             return (
                 <div className="flex flex-wrap justify-center items-center">
                     {results?.map(({ image, link: { href, title } }, index) => (
@@ -65,7 +65,7 @@ export const Results = () => {
                     ))}
                 </div>
             );
-        case "/news":
+        case '/news':
             return (
                 <div className="flex flex-wrap justify-between space-y-6 sm:px-56 items-center">
                     {results?.map(({ links, id, source, title }) => (
@@ -94,7 +94,7 @@ export const Results = () => {
                     ))}
                 </div>
             );
-        case "/video":
+        case '/video':
             return (
                 <div className="flex flex-wrap ">
                     {results?.map((video, index) => (
@@ -112,6 +112,6 @@ export const Results = () => {
                 </div>
             );
         default:
-            return "ERROR";
+            return 'ERROR';
     }
 };

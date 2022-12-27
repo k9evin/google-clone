@@ -1,10 +1,10 @@
-import React from "react";
-import { Puff } from "react-loader-spinner";
+import React from 'react';
+import HashLoader from 'react-spinners/HashLoader';
 
 export const Loading = () => {
     return (
         <div className="flex justify-center items-center">
-            <Puff color="#00BFFF" height={550} width={80} />
+            <HashLoader color="#36d7b7" />
         </div>
     );
 };
